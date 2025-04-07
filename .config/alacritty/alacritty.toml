@@ -1,0 +1,22 @@
+
+[env]
+term = "xterm-256color"
+
+[font]
+size = 12
+
+[font.bold]
+family = "Hack NerdFont"
+style = "Bold"
+
+[font.italic]
+family = "Hack NerdFont"
+style = "Italic"
+
+[font.normal]
+family = "Hack NerdFont"
+style = "Regular"
+
+[general]
+import = ["~/.config/alacritty/rose-pine-moon.toml"]
+

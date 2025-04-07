@@ -1,0 +1,41 @@
+# General
+font pango:HackNerdFont 12
+gaps inner 8 
+gaps outer 8 
+floating_modifier $mod
+tiling_drag modifier titlebar
+for_window [class="^.*"] border pixel 0
+
+# Default Tabs
+for_window [class="Alacritty"] fullscreen enable
+for_window [class="zen"] fullscreen enable
+for_window [class="zen"] move to workspace $ws2
+
+# Scratchpads
+## Terminal
+for_window [instance="bg_term"] floating enable
+for_window [instance="bg_term"] move position 277 156
+for_window [instance="bg_term"] resize set 1366 768
+for_window [instance="bg_term"] move scratchpad
+for_window [instance="bg_term"] border pixel 2
+exec_always --no-startup-id alacritty --class bg_term -e tmux new-session -s "scratchpad"
+
+
+## Browser
+for_window [class="bg_browser"] floating enable
+for_window [class="bg_browser"] move position 277 156
+for_window [class="bg_browser"] resize set 1366 768
+for_window [class="bg_browser"] move scratchpad
+exec_always --no-startup-id $BROWSER -P scratchpad --url https://chatgpt.com --no-remote --class="bg_browser" &
+
+# Status Bar
+bar {
+	status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    colors {
+      background #282a36
+        statusline #ffffff
+        separator #44475a
+        focused_workspace #bd93f9 #bd93f9 #282a36
+        inactive_workspace #44475a #44475a #282a36
+    }
+}

@@ -1,0 +1,66 @@
+cmd open ${{
+    case $(file --mime-type -Lb "$f") in
+        text/*) nvim "$f" ;;
+        image/*) sxiv "$f" ;;
+        video/*|audio/*) mpv "$f" ;;
+        application/pdf|application/epub+zip) zathura "$f" ;;
+        *) xdg-open "$f" ;;
+    esac
+}}
+
+cmd delete ${{
+    set -f
+    printf "$fx\n"
+    printf "delete?[y/n]"
+    read ans
+    [ "$ans" = "y" ] && rm -rf $fx
+}}
+
+cmd extract ${{
+    set -f
+    case $f in
+        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+        *.tar.gz|*.tgz) tar xzvf $f;;
+        *.tar.xz|*.txz) tar xJvf $f;;
+        *.zip) unzip $f;;
+        *.rar) unrar x $f;;
+        *.7z) 7z x $f;;
+    esac
+}}
+
+cmd tar ${{
+    set -f
+    mkdir $1
+    cp -r $fx $1
+    tar czf $1.tar.gz $1
+    rm -rf $1
+}}
+
+cmd zip ${{
+    set -f
+    mkdir $1
+    cp -r $fx $1
+    zip -r $1.zip $1
+    rm -rf $1
+}}
+
+set shell sh
+set shellopts '-eu'
+set ifs "\n"
+set hidden true
+set ignorecase true
+set icons true
+
+map . set hidden!
+map <enter> open
+map ` !true
+map x $$f
+map X !$f
+map D :push %mkdir<space>
+map F :push %touch<space>
+map <delete> delete
+map <enter> open
+map ef extract
+map gc cd ~/.config
+map gd cd ~/Downloads
+map gw cd ~/workspace

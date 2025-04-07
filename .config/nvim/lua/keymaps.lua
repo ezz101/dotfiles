@@ -1,0 +1,10 @@
+vim.keymap.set("n", "<leader>c", ":w :make<CR>")
+vim.keymap.set("n", "<leader>\\", ":vsplit<CR><C-w><C-l>")
+vim.keymap.set("n", "<leader>|", ":split<CR><C-w><C-j>")
+vim.keymap.set("n", "<leader>w", ":w<CR>")
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+
+vim.keymap.set({ "n", "t" }, "<leader>q", function()
+	pcall(vim.cmd.write)
+	vim.cmd.quit()
+end)
