@@ -1,0 +1,12 @@
+#!/bin/sh
+
+project=$(find "$HOME" -type d -print | fzf)
+
+if [ -z "$project" ]; then
+    echo "No project selected."
+    exit 1
+fi
+
+session_name=$(basename "$project")
+tmux attach -t "$session_name" || \
+	tmux new-session -s "$session_name" -c "$project" "nvim"

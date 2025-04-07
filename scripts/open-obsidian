@@ -1,0 +1,10 @@
+#!/bin/sh
+
+obsidian
+
+cd $HOME/workspace/me/obsidian-vault/ || exit
+
+git add .
+git commit -m "$(date '+%H:%M:%S - %d/%m/%Y')"
+git push -u origin main
+

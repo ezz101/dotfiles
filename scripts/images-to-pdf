@@ -1,0 +1,86 @@
+#!/home/izz/.python-env/bin/python3
+
+import os
+
+# import zipfile
+from fpdf import FPDF
+from PIL import Image
+import argparse
+
+
+# def create_zip(directory, output_dir):
+#     zip_name = os.path.join(output_dir, f"{os.path.basename(directory)}.zip")
+#     with zipfile.ZipFile(zip_name, "w") as zipf:
+#         for root, _, files in os.walk(directory):
+#             for file in files:
+#                 if file.lower().endswith((".png", ".jpg", ".jpeg", ".bmp", ".gif")):
+#                     zipf.write(os.path.join(root, file), arcname=file)
+#     print(f"ZIP archive created: {zip_name}")
+#
+
+
+def create_pdf(directory, output_dir):
+    output_dir = output_dir.rstrip(os.sep)  # Remove trailing slash if present
+    pdf_name = os.path.join(output_dir, f"{os.path.basename(directory)}.pdf")  # Using directory name for the PDF filename
+    pdf = FPDF()
+    for root, _, files in os.walk(directory):
+        for file in sorted(files):  # Sorting for consistency
+            if file.lower().endswith((".png", ".jpg", ".jpeg", ".bmp", ".gif")):
+                image = Image.open(os.path.join(root, file))
+                width, height = image.size
+                pdf_width, pdf_height = 210, 297  # A4 size in mm
+                aspect_ratio = width / height
+                if aspect_ratio > (pdf_width / pdf_height):
+                    new_width, new_height = pdf_width, pdf_width / aspect_ratio
+                else:
+                    new_height, new_width = pdf_height, pdf_height * aspect_ratio
+                pdf.add_page()
+                pdf.image(
+                    os.path.join(root, file),
+                    x=10,
+                    y=10,
+                    w=new_width - 20,
+                    h=new_height - 20,
+                )
+    pdf.output(pdf_name)
+    print(f"PDF created: {pdf_name}")
+
+
+def main(args: argparse.Namespace):
+    if not os.path.isdir(args.input):
+        print("Invalid directory!")
+        os._exit(-1)
+
+    output = args.output if args.output else args.input
+    # output_pdf = args.output_pdf or args.output or args.input
+    # output_zip = args.output_zip or args.output or args.input
+
+    os.makedirs(output, exist_ok=True)
+    # os.makedirs(output_zip, exist_ok=True)
+    # create_zip(args.input, output_zip)
+    create_pdf(args.input, output)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--input",
+        "-i",
+        required=True,
+        help="Path to the input directory containing images",
+    )
+    parser.add_argument(
+        "--output", "-o", help="Path to the output directory (optional)"
+    )
+    # parser.add_argument(
+    #     "--output-pdf",
+    #     "-p",
+    #     help="Path to the output directory of the pdf file (optional)",
+    # )
+    # parser.add_argument(
+    #     "--output-zip",
+    #     "-z",
+    #     help="Path to the output directory of the zip file (optional)",
+    # )
+    args = parser.parse_args()
+    main(args)
