@@ -1,6 +1,14 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-format = " $directory $git_branch$character"
+format = """ \
+$python\
+$conda\
+$directory\
+$git_branch\
+$git_commit\
+$git_status\
+$character"""
+
 palette = "rose-pine-moon"
 
 [palettes.rose-pine-moon]
@@ -11,17 +19,24 @@ rose = '#ea9a97'
 pine = '#3e8fb0'
 foam = '#9ccfd8'
 iris = '#c4a7e7'
+subtle = '#908caa'
 
 [character]
 success_symbol = "[❯](bold love)[❯](bold gold)[❯](bold foam)"  # Rose Pine: Iris, Gold, Foam
 error_symbol = "[❮](bold love)[❮](bold gold)[❮](bold foam)"  # Same colors for failure
 
 [directory]
-format = "[$path](fg:iris)"
+format = "[$path](fg:iris) "
 truncation_length = 3
 truncation_symbol = ""
 fish_style_pwd_dir_length = 1
-home_symbol = "~"  # Makes sure "/home" is displayed fully
+home_symbol = "~"
 
 [git_branch]
 format = "[ $branch ](fg:foam)"
+
+[git_status]
+style = "subtle"
+
+[python]
+format = '[(\($virtualenv\))]($style)'

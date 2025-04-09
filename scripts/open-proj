@@ -8,5 +8,9 @@ if [ -z "$project" ]; then
 fi
 
 session_name=$(basename "$project")
-tmux attach -t "$session_name" || \
-	tmux new-session -s "$session_name" -c "$project" "nvim"
+
+if tmux has-session -t "$session_name" 2>/dev/null; then
+    tmux attach -t "$session_name"
+else
+    tmux new-session -s "$session_name" -c "$project" "nvim; zsh; tmux kill-session -t $session_name"
+fi

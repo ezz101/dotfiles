@@ -27,6 +27,9 @@ alias vi="$EDITOR"
 alias docker='doas docker'
 alias rmf='rm -rf'
 alias dotfiles='git --git-dir=$HOME/dotfiles.git --work-tree=$HOME'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
 alias dls='docker ps -a'
 alias drm='docker rm -f'

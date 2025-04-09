@@ -20,6 +20,12 @@ for_window [instance="bg_term"] move scratchpad
 for_window [instance="bg_term"] border pixel 2
 exec_always --no-startup-id alacritty --class bg_term -e tmux new-session -s "scratchpad"
 
+## Anki-web
+# for_window [class="bg_browser"] floating enable
+# for_window [class="bg_browser"] move position 277 156
+# for_window [class="bg_browser"] resize set 1366 768
+# for_window [class="bg_browser"] move scratchpad
+# exec_always --no-startup-id $BROWSER -P scratchpad --url https://chatgpt.com --no-remote --class="bg_browser" &
 
 ## Browser
 for_window [class="bg_browser"] floating enable

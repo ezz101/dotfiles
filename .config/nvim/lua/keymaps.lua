@@ -1,4 +1,7 @@
-vim.keymap.set("n", "<leader>c", ":w :make<CR>")
+vim.keymap.set("n", "<leader>c", function()
+	vim.cmd("write")
+	vim.cmd("silent! make | redraw!")
+end)
 vim.keymap.set("n", "<leader>\\", ":vsplit<CR><C-w><C-l>")
 vim.keymap.set("n", "<leader>|", ":split<CR><C-w><C-j>")
 vim.keymap.set("n", "<leader>w", ":w<CR>")

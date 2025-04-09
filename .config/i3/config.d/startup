@@ -10,7 +10,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # Applications
 exec --no-startup-id i3-msg 'workspace $ws1; exec alacritty -e open-proj'
-# exec --no-startup-id tmux kill-server
 
 # Other
 exec_always --no-startup-id feh --bg-scale ~/.config/i3/wallpaper.jpg
