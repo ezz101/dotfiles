@@ -45,15 +45,6 @@ source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 source ~/.zshenv
 
-
-shutdown_tmux() {
-    if [[ $(who | grep -c $USER) -eq 1 ]]; then
-        tmux kill-server
-    fi
-}
-
-trap shutdown_tmux EXIT
-
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then 
   exec startx &>/dev/null 
 fi

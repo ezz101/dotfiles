@@ -1,4 +1,4 @@
-#!/home/izz/.python-env/bin/python3
+#!/usr/bin/python3
 
 import os
 
@@ -21,7 +21,9 @@ import argparse
 
 def create_pdf(directory, output_dir):
     output_dir = output_dir.rstrip(os.sep)  # Remove trailing slash if present
-    pdf_name = os.path.join(output_dir, f"{os.path.basename(directory)}.pdf")  # Using directory name for the PDF filename
+    pdf_name = os.path.join(
+        output_dir, f"{os.path.basename(directory)}.pdf"
+    )  # Using directory name for the PDF filename
     pdf = FPDF()
     for root, _, files in os.walk(directory):
         for file in sorted(files):  # Sorting for consistency

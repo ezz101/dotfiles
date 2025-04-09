@@ -4,20 +4,20 @@ export BROWSER="zen"
 export TZ="Africa/Cairo"
 
 export PATH="$PATH:/usr/local/bin"
-export PATH="$PATH:/usr/local/texlive/2024/bin/x86_64-linux"
 export PATH="$PATH:/sbin/"
+export PATH="$PATH:/usr/local/texlive/2024/bin/x86_64-linux"
+
+export PATH="$PATH:$HOME/scripts"
 export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/.nvim/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.node/bin"
-export PATH="$PATH:$HOME/scripts"
 
 alias ls='eza --icons --color=always'
 alias ll='eza -lh --icons --git'
 alias la='eza -lha --icons --git'
-alias lt='eza -T --icons --git'  # Tree view
-alias l1='eza -1 --icons'  # One column view
-alias ld='eza -D --icons'  # List only directories
+alias lt='eza -T --icons --git'
+alias l1='eza -1 --icons'
+alias ld='eza -D --icons'
 
 alias i='doas apt install'
 alias u='doas apt update && doas apt upgrade -y'
@@ -35,5 +35,3 @@ alias dls='docker ps -a'
 alias drm='docker rm -f'
 alias dcu='docker compose up'
 alias dcd='docker compose down'
-
-alias tmux='tmux -f .config/tmux.conf'

@@ -39,4 +39,4 @@ format = "[ $branch ](fg:foam)"
 style = "subtle"
 
 [python]
-format = '[(\($virtualenv\))]($style)'
+format = '[(\($virtualenv\)) ]($style)'
