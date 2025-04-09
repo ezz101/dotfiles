@@ -35,3 +35,5 @@ alias dls='docker ps -a'
 alias drm='docker rm -f'
 alias dcu='docker compose up'
 alias dcd='docker compose down'
+
+alias tmux='tmux -f .config/tmux.conf'
