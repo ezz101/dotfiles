@@ -48,3 +48,6 @@ source ~/.zshenv
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then 
   exec startx &>/dev/null 
 fi
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"

@@ -1,6 +1,6 @@
-return {
-	"Vigemus/iron.nvim",
-	config = function()
+local M = {}
+
+M.config = function()
 		local iron = require("iron.core")
 		local view = require("iron.view")
 		local common = require("iron.fts.common")
@@ -24,8 +24,8 @@ return {
 				repl_open_cmd = view.split.vertical.botright(50),
 			},
 			keymaps = {
-				toggle_repl = "<space>rr", -- toggles the repl open and closed.
-				restart_repl = "<space>rR", -- calls `IronRestart` to restart the repl
+				toggle_repl = "<space>rr",
+				restart_repl = "<space>rR",
 				send_motion = "<space>sc",
 				visual_send = "<space>sc",
 				send_file = "<space>sf",
@@ -41,7 +41,6 @@ return {
 				cr = "<space>s<cr>",
 				interrupt = "<space>s<space>",
 				exit = "<space>sq",
-				-- clear = "<space>cl",
 			},
 			highlight = {
 				italic = true,
@@ -51,5 +50,6 @@ return {
 
 		vim.keymap.set("n", "<space>rf", "<cmd>IronFocus<cr>")
 		vim.keymap.set("n", "<space>rh", "<cmd>IronHide<cr>")
-	end,
-}
+	end
+
+return M

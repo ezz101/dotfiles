@@ -1,3 +1,6 @@
+vim.lsp.inlay_hint.enable()
+
+vim.diagnostic.config({ virtual_text = true })
 vim.opt.clipboard = "unnamedplus"
 vim.opt.number = true
 vim.opt.relativenumber = true

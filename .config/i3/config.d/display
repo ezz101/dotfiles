@@ -20,6 +20,13 @@ for_window [instance="bg_term"] move scratchpad
 for_window [instance="bg_term"] border pixel 2
 exec_always --no-startup-id alacritty --class bg_term -e tmux new-session -s "scratchpad"
 
+## Postman
+for_window [class="Postman"] floating enable
+for_window [class="Postman"] move position 277 156
+for_window [class="Postman"] resize set 1366 768
+for_window [class="Postman"] move scratchpad
+exec_always --no-startup-id postman &
+
 ## Anki-web
 # for_window [class="bg_browser"] floating enable
 # for_window [class="bg_browser"] move position 277 156
@@ -28,11 +35,12 @@ exec_always --no-startup-id alacritty --class bg_term -e tmux new-session -s "sc
 # exec_always --no-startup-id $BROWSER -P scratchpad --url https://chatgpt.com --no-remote --class="bg_browser" &
 
 ## Browser
-for_window [class="bg_browser"] floating enable
-for_window [class="bg_browser"] move position 277 156
-for_window [class="bg_browser"] resize set 1366 768
-for_window [class="bg_browser"] move scratchpad
-exec_always --no-startup-id $BROWSER -P scratchpad --url https://chatgpt.com --no-remote --class="bg_browser" &
+for_window [class="surf"] floating enable
+for_window [class="surf"] move position 277 156
+for_window [class="surf"] resize set 1366 768
+for_window [class="surf"] move scratchpad
+# exec_always --no-startup-id $BROWSER -P scratchpad --url https://chatgpt.com --no-remote --class="bg_browser" &
+exec_always --no-startup-id surf chatgpt.com &
 
 # Status Bar
 bar {

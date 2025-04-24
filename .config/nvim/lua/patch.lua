@@ -134,4 +134,12 @@ function DeleteAssistantContext()
 	})
 end
 
-return {}
+vim.keymap.set({ "n", "v", "x" }, "<leader>pp", PatchClipboard, { desc = "Patch clipboard content" })
+vim.keymap.set(
+	{ "n", "v", "x" },
+	"<leader>pl",
+	LoadAssistantClipboard,
+	{ desc = "Load context and current file to clipboard" }
+)
+vim.keymap.set({ "n", "v", "x" }, "<leader>pc", AddAssistantContext, { desc = "Add to context files" })
+vim.keymap.set({ "n", "v", "x" }, "<leader>pd", DeleteAssistantContext, { desc = "Remove from context files" })

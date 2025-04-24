@@ -25,7 +25,8 @@ bindsym $mod+Shift+y exec alacritty -e play-from-yt
 # Navigation
 ## General
 bindsym $mod+q kill
-bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-2/launcher.sh
+# bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-2/launcher.sh
+bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+f floating toggle
 
@@ -64,7 +65,8 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 ## Scratchpads
-bindsym $mod+a [class="bg_browser"] scratchpad show
+bindsym $mod+a [class="Surf"] scratchpad show
+bindsym $mod+t [class="Postman"] scratchpad show
 bindsym $mod+grave [instance="bg_term"] scratchpad show
 
 ## Resizing

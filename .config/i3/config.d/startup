@@ -6,6 +6,7 @@ exec --no-startup-id bash -c "sleep 2 && xset r rate 300 50"
 exec --no-startup-id syncthing -no-browser &
 exec --no-startup-id picom &
 exec --no-startup-id bash -c "sleep 5 && nm-applet"
+exec_always --no-startup-id doas dhclient
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # Applications
