@@ -1,0 +1,113 @@
+{
+	"coc.preferences.formatOnSave": true,
+	"inlayHint.position": "eol",
+	"languageserver": {
+		"rust": {
+			"command": "rust-analyzer",
+			"rootPatterns": [
+				"Cargo.toml"
+			],
+			"filetypes": [
+				"rust",
+				"toml"
+			]
+		},
+		"cpp": {
+			"command": "clangd",
+			"rootPatterns": [
+				".clangd",
+				"compile_commands.json"
+			],
+			"filetypes": [
+				"cpp",
+				"c"
+			]
+		},
+		"go": {
+			"command": "gopls",
+			"rootPatterns": [
+				"go.mod"
+			],
+			"trace.server": "verbose",
+			"filetypes": [
+				"go"
+			]
+		},
+		"python": {
+			"command": "pyright",
+			"rootPatterns": [
+				"pyproject.toml",
+				"uv.lock",
+				"requirements.txt"
+			],
+			"filetypes": [
+				"python"
+			]
+		},
+		"lua": {
+			"command": "lua-language-server",
+			"rootPatterns": [
+				"init.lua",
+				"lua/",
+				".luarc.json"
+			],
+			"filetypes": [
+				"lua"
+			]
+		},
+		"bash": {
+			"command": "bash-language-server",
+			"filetypes": [
+				"sh",
+				"bash"
+			]
+		},
+		"docker": {
+			"command": "dockerls",
+			"filetypes": [
+				"dockerfile"
+			]
+		},
+		"cmake": {
+			"command": "cmake-language-server",
+			"filetypes": [
+				"cmake"
+			]
+		},
+		"yaml": {
+			"command": "yaml-language-server",
+			"filetypes": [
+				"yaml"
+			],
+			"settings": {
+				"yaml": {
+					"schemas": {
+						"https://json.schemastore.org/github-workflow.json": "/.github/workflows/*",
+						"https://raw.githubusercontent.com/yannh/kubernetes-json-schema/refs/heads/master/v1.32.1-standalone-strict/all.json": [
+							"/*.k8s.yaml",
+							"/*.k8s.yml",
+							"/*.kubernetes.yaml",
+							"/*.kubernetes.yml",
+							"/*deployment*.yaml",
+							"/*service*.yaml",
+							"/*ingress*.yaml",
+							"/*pod*.yaml",
+							"/*configmap*.yaml",
+							"/*secret*.yaml",
+							"/*statefulset*.yaml",
+							"/*daemonset*.yaml",
+							"/*job*.yaml",
+							"/*cronjob*.yaml"
+						]
+					}
+				}
+			}
+		},
+		"latex": {
+			"command": "texlab",
+			"filetypes": [
+				"plaintex"
+			]
+		}
+	}
+}

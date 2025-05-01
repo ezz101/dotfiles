@@ -1,4 +1,4 @@
-local M = {"nvim-telescope/telescope.nvim"}
+local M = { "nvim-telescope/telescope.nvim" }
 
 M.opts = {
 	require("telescope.themes").get_dropdown({}),
@@ -29,9 +29,9 @@ M.config = function()
 end
 
 M.dependencies = {
---			"nvim-telescope/telescope-fzf-native.nvim",
---			"nvim-telescope/telescope-ui-select.nvim",
---			"BurntSushi/ripgrep",
---		}
+	"nvim-telescope/telescope-fzf-native.nvim",
+	"nvim-telescope/telescope-ui-select.nvim",
+	"BurntSushi/ripgrep",
+}
 
 return M

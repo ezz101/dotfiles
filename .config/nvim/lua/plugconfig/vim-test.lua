@@ -1,4 +1,4 @@
-local M = {"vim-test/vim-test"}
+local M = { "vim-test/vim-test" }
 
 M.dependencies = "preservim/vimux"
 

@@ -1,4 +1,4 @@
-local M = {"stevearc/oil.nvim"}
+local M = {}
 
 M.config = function()
 		require("oil").setup({

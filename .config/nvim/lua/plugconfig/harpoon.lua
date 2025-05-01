@@ -1,3 +1,4 @@
+
 local harpoon_select = function(i)
 	return function()
 		require("harpoon"):list():select(i)
@@ -21,9 +22,9 @@ local harpoon_next = function()
 end
 
 
-local M = {"ThePrimeagen/harpoon"}
+local M = { "ThePrimeagen/hrpoon" }
 
-M.branch = 2
+M.branch = "harpoon2",
 M.dependencies = "nvim-lua/plenary.nvim"
 
 M.config = function()
