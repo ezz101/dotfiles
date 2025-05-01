@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [[ $EUID -ne 0 ]]; then
+  exec sudo "$0" "$@"
+fi
+
+ISO=$(find . ~ ~/Downloads -maxdepth 2 -type f -name "*.iso" 2>/dev/null | dmenu -i -p "Choose Debian ISO:")
+[[ -z "$ISO" ]] && { echo "No ISO selected. Exiting."; exit 1; }
+
+DRIVES=$(lsblk -d -o NAME,MODEL,SIZE,TRAN | grep -E 'usb|removable' | awk '{print "/dev/" $1 "  [" $2 " " $3 "]"}')
+
+DEVICE=$(echo "$DRIVES" | dmenu -i -p "Choose USB device to write to:")
+[[ -z "$DEVICE" ]] && { echo "No device selected. Exiting."; exit 1; }
+
+DEV_PATH=$(echo "$DEVICE" | awk '{print $1}')
+
+CONFIRM=$(echo -e "No\nYes" | dmenu -i -p "Write $ISO to $DEV_PATH? (This will erase data!)")
+[[ "$CONFIRM" != "Yes" ]] && { echo "Operation cancelled."; exit 1; }
+
+umount ${DEV_PATH}?* 2>/dev/null
+
+echo "Writing ISO to USB..."
+dd if="$ISO" of="$DEV_PATH" bs=4M status=progress oflag=sync
+
+echo "Done. You can now safely remove the USB drive."
+

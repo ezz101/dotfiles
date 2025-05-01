@@ -44,6 +44,7 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 source ~/.zshenv
+source ~/.secrets
 
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then 
   exec startx &>/dev/null 

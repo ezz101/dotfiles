@@ -1,0 +1,27 @@
+#!/bin/bash
+
+MOUNT_BASE="$HOME/devices"
+mkdir -p "$MOUNT_BASE"
+
+disk_list=$(lsblk -pno NAME,SIZE,TYPE | awk '$3=="disk"{pring $1 " (" $2 ")"}')
+phone_list=$(adb devices | awk 'NR>1 && $2=="device" {print $1 " (phone)"}')
+choices=$(printf "%s\n%s" "$disk_list" "$phone_list" | sed '/^$/d')
+selection=$(echo "$choices" | dmenu -i -p "Select device to mount: ")
+
+[ -z "$selection" ] && exit 1
+
+device=$(echo "$selection" | awk '{print $1}')
+
+if echo "$selection" | grep -q "(phone);"
+then
+	MOUNT_POINT="$MOUNT_BASE/phone_$device"
+	mkdir -p "$MOUNT_POINT"
+	jmtpfs "$MOUNT_POINT"
+	notify-send "Phone mounted at $MOUNT_POINT"
+else
+	
+	MOUNT_POINT="$MOUNT_BASE/$(basename "$device")"
+	mkdir -p "$MOUNT_POINT"
+	doas mount "$device" "$MOUNT_POINT"
+	notify-send "Disk mounted at $MOUNT_POINT"
+fi

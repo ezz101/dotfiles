@@ -4,7 +4,12 @@ gaps inner 8
 gaps outer 8 
 floating_modifier $mod
 tiling_drag modifier titlebar
-for_window [class="^.*"] border pixel 0
+default_border none
+default_floating_border none
+gaps inner 0
+gaps outer 0
+smart_borders no_gaps
+smart_gaps off
 
 # Default Tabs
 for_window [class="Alacritty"] fullscreen enable
@@ -27,20 +32,13 @@ for_window [class="Postman"] resize set 1366 768
 for_window [class="Postman"] move scratchpad
 exec_always --no-startup-id postman &
 
-## Anki-web
-# for_window [class="bg_browser"] floating enable
-# for_window [class="bg_browser"] move position 277 156
-# for_window [class="bg_browser"] resize set 1366 768
-# for_window [class="bg_browser"] move scratchpad
-# exec_always --no-startup-id $BROWSER -P scratchpad --url https://chatgpt.com --no-remote --class="bg_browser" &
+# Browser
+for_window [class="Surf"] floating enable
+for_window [class="Surf"] move scratchpad
+for_window [class="Surf"] resize set 640 1055
+for_window [class="Surf"] move position 1280 0
 
-## Browser
-for_window [class="surf"] floating enable
-for_window [class="surf"] move position 277 156
-for_window [class="surf"] resize set 1366 768
-for_window [class="surf"] move scratchpad
-# exec_always --no-startup-id $BROWSER -P scratchpad --url https://chatgpt.com --no-remote --class="bg_browser" &
-exec_always --no-startup-id surf chatgpt.com &
+exec_always --no-startup-id surf -z 1.6 chatgpt.com &
 
 # Status Bar
 bar {

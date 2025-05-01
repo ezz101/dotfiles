@@ -11,6 +11,7 @@ export PATH="$PATH:$HOME/scripts"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.node/bin"
+export PATH="$PATH:$HOME/.local/share/nvim/mason/bin/"
 
 alias ls='eza --icons --color=always'
 alias ll='eza -lh --icons --git'
