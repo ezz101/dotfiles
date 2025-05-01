@@ -13,12 +13,12 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.node/bin"
 export PATH="$PATH:$HOME/.local/share/nvim/mason/bin/"
 
-alias ls='eza --icons --color=always'
-alias ll='eza -lh --icons --git'
-alias la='eza -lha --icons --git'
-alias lt='eza -T --icons --git'
-alias l1='eza -1 --icons'
-alias ld='eza -D --icons'
+alias ls='exa --icons --color=always'
+alias ll='exa -lh --icons --git'
+alias la='exa -lha --icons --git'
+alias lt='exa -T --icons --git'
+alias l1='exa -1 --icons'
+alias ld='exa -D --icons'
 
 alias i='doas apt install'
 alias u='doas apt update && doas apt upgrade -y'
@@ -36,3 +36,4 @@ alias dls='docker ps -a'
 alias drm='docker rm -f'
 alias dcu='docker compose up'
 alias dcd='docker compose down'
+. "$HOME/.cargo/env"

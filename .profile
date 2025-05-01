@@ -1,1 +1,2 @@
 startx
+. "$HOME/.cargo/env"
