@@ -1,5 +1,5 @@
 {
-  "avante.nvim": { "branch": "main", "commit": "448efbb8423c319e6d10e527dc0827c22b3748ff" },
+  "avante.nvim": { "branch": "main", "commit": "3a43621e17bf782b8c725f44979ca320ffbe661e" },
   "coc.nvim": { "branch": "release", "commit": "6014802cd24c4e761a3d97375e9234e63661c964" },
   "dressing.nvim": { "branch": "master", "commit": "2d7c2db2507fa3c4956142ee607431ddb2828639" },
   "fzf-lua": { "branch": "main", "commit": "b11467c3fbfe48e4a815e4909f5c4e5b413ce6d0" },

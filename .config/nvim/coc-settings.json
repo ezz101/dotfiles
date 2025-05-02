@@ -1,8 +1,6 @@
 {
 	"coc.preferences.formatOnSave": true,
 	"inlayHint.position": "eol",
-	"diagnostic.virtualText": true,
-	"diagnostic.virtualTextCurrentLineOnly": true,
 	"python.linting.mypyEnabled": true,
 	"python.linting.ruffPath": "uv tool run ruff",
 	"python.venvPath": ".venv"

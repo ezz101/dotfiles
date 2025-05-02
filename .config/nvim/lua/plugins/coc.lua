@@ -6,15 +6,11 @@ M.config = function()
 	vim.g["coc_global_extensions"] = {
 		"coc-rust-analyzer",
 		"coc-clangd",
-		"coc-go",
 		"coc-pyright",
-		"coc-tsserver",
 		"coc-lua",
 		"coc-markdownlint",
 		"coc-json",
 		"coc-yaml",
-		"coc-html",
-		"coc-css",
 	}
 	vim.opt.backup = false
 	vim.opt.writebackup = false
@@ -100,7 +96,6 @@ M.config = function()
 	vim.api.nvim_create_user_command("Format", "call CocAction('format')", {})
 	vim.api.nvim_create_user_command("Fold", "call CocAction('fold', <f-args>)", { nargs = '?' })
 	vim.api.nvim_create_user_command("OR", "call CocActionAsync('runCommand', 'editor.action.organizeImport')", {})
-	vim.opt.statusline:prepend("%{coc#status()}%{get(b:,'coc_current_function','')}")
 
 	local opts = { silent = true, nowait = true }
 	Nmap("<space>a", ":<C-u>CocList diagnostics<cr>", opts)

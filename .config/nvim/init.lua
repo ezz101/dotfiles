@@ -34,7 +34,6 @@ vim.g.maplocalleader = "\\"
 
 require("lazy").setup({
 	spec = {
-		require 'plugins.coc',
 		require 'plugins.colorscheme',
 		require 'plugins.avante',
 		require 'plugins.dap',
@@ -48,6 +47,7 @@ require("lazy").setup({
 		require 'plugins.whichkey',
 		require 'plugins.vimtest',
 		require 'plugins.snacks',
+		require 'plugins.coc',
 	},
 	install = { colorscheme = { "habamax" } },
 	checker = { enabled = true },
