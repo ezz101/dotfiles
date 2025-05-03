@@ -1,29 +1,22 @@
 vim.lsp.inlay_hint.enable()
-
 vim.diagnostic.config({ virtual_text = true })
-vim.opt.clipboard = "unnamedplus"
-vim.opt.number = true
-vim.opt.relativenumber = true
-
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-
-vim.opt.wrap = false
-vim.opt.colorcolumn = "80"
-vim.opt.scrolloff = 5
-vim.opt.termguicolors = true
-
-vim.api.nvim_create_autocmd({ "BufReadPost", "FileReadPost" }, {
-	pattern = "*",
-	command = "normal! zR",
-})
-
 vim.g.mapleader = " "
 
--- Enable list characters
-vim.opt.list = true
-vim.opt.listchars = {
+local opt = vim.opt
+opt.clipboard = "unnamedplus"
+opt.number = true
+opt.relativenumber = true
+
+opt.shiftwidth = 2
+opt.tabstop = 2
+opt.softtabstop = 2
+
+opt.wrap = false
+opt.colorcolumn = "80"
+opt.scrolloff = 5
+
+opt.list = true
+opt.listchars = {
 	tab = "· ",
 	trail = "·",
 	extends = "»",
