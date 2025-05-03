@@ -2,6 +2,7 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export BROWSER="zen"
 export TZ="Africa/Cairo"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:/sbin/"

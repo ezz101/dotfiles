@@ -1,4 +1,3 @@
-
 [env]
 term = "xterm-256color"
 
@@ -18,5 +17,6 @@ family = "Hack NerdFont"
 style = "Regular"
 
 [general]
-import = ["~/.config/alacritty/rose-pine-moon.toml"]
-
+import = [
+	"~/.config/alacritty/rose-pine-moon.yaml"
+]

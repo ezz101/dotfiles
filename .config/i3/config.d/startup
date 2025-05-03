@@ -8,8 +8,6 @@ exec --no-startup-id picom &
 exec --no-startup-id bash -c "sleep 5 && nm-applet"
 exec_always --no-startup-id bash -c "sleep 5 && doas dhclient"
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
-# Applications
 exec --no-startup-id i3-msg 'workspace $ws1; exec alacritty -e open-proj'
 
 # Other
