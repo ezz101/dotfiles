@@ -1,2 +1,0 @@
-startx
-. "$HOME/.cargo/env"

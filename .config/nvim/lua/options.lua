@@ -5,6 +5,7 @@ vim.g.mapleader = " "
 local opt = vim.opt
 opt.clipboard = "unnamedplus"
 opt.number = true
+opt.numberwidth = 3
 opt.relativenumber = true
 
 opt.shiftwidth = 2

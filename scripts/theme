@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# export THEME="base16-gruvbox-dark-hard"
+# export THEME="base16-rose-pine-moon"
+zsh ~/.zshenv
+tinty apply $THEME

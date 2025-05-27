@@ -3,6 +3,9 @@ export VISUAL="nvim"
 export BROWSER="zen"
 export TZ="Africa/Cairo"
 export XDG_CONFIG_HOME="$HOME/.config"
+export THEME="base16-gruvbox-material-dark-hard"
+# export THEME="base16-rose-pine"
+export OPENAI_API_KEY=AIzaSyDiN_IfGbFwFeIvL3D5ud8qQFdiPtKEk4s # GEMENI
 
 export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:/sbin/"
@@ -11,15 +14,17 @@ export PATH="$PATH:/usr/local/texlive/2024/bin/x86_64-linux"
 export PATH="$PATH:$HOME/scripts"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/.go/bin"
+export PATH="$PATH:$HOME/.protoc/bin"
 export PATH="$PATH:$HOME/.node/bin"
 export PATH="$PATH:$HOME/.local/share/nvim/mason/bin/"
 
-alias ls='exa --icons --color=always'
-alias ll='exa -lh --icons --git'
-alias la='exa -lha --icons --git'
-alias lt='exa -T --icons --git'
-alias l1='exa -1 --icons'
-alias ld='exa -D --icons'
+alias ls='eza --icons --color=always'
+alias ll='eza -lh --icons --git'
+alias la='eza -lha --icons --git'
+alias lt='eza -T --icons --git'
+alias l1='eza -1 --icons'
+alias ld='eza -D --icons'
 
 alias i='doas apt install'
 alias u='doas apt update && doas apt upgrade -y'
@@ -32,6 +37,8 @@ alias dotfiles='git --git-dir=$HOME/dotfiles.git --work-tree=$HOME'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+
+alias th='source $HOME/.zshenv && tinty apply $THEME'
 
 alias dls='docker ps -a'
 alias drm='docker rm -f'

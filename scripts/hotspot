@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -e
+
+SSID="zbook"
+PASSWORD="pa\$\$word"
+
+if ! nmcli con show | grep -q "$SSID"; then
+    doas nmcli device wifi hotspot con-name "$SSID" ssid "$SSID" band bg password "$PASSWORD"
+fi
+
+nmcli con up "$SSID"
+
+nmcli con down "$SSID"
+

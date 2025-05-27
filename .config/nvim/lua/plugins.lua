@@ -16,6 +16,7 @@ return {
 	"hrsh7th/cmp-nvim-lsp",
 	"hrsh7th/cmp-nvim-lua",
 	"hrsh7th/cmp-nvim-lsp-signature-help",
+	-- "ray-x/lsp_signature.nvim",
 	"L3MON4D3/LuaSnip",
 	"rafamadriz/friendly-snippets",
 
@@ -31,18 +32,19 @@ return {
 	"rcarriga/nvim-dap-ui",
 	"mfussenegger/nvim-dap-python",
 	"SGauvin/ctest-telescope.nvim",
-	{ "mrcjkb/rustaceanvim", lazy = false },
+	-- { "mrcjkb/rustaceanvim", lazy = false },
 
 	-- Testing
 	"vim-test/vim-test",
 	"preservim/vimux",
 
 	-- UI
-	"wincent/base16-nvim",
+	"tinted-theming/tinted-vim",
 	"nvim-lualine/lualine.nvim",
 	"kevinhwang91/nvim-ufo",
+	"luukvbaal/statuscol.nvim",
 	"j-hui/fidget.nvim",
-	"folke/lsp-colors.nvim",
+	"folke/snacks.nvim",
 
 	-- Navigation
 	"stevearc/oil.nvim",
@@ -53,6 +55,7 @@ return {
 
 	-- Symbols
 	{ "nvim-treesitter/nvim-treesitter", build = "TSBuild" },
+	"nvim-treesitter/nvim-treesitter-textobjects",
 	"hedyhli/outline.nvim",
 
 	-- Git
@@ -61,8 +64,12 @@ return {
 
 	-- AI
 	"github/copilot.vim",
-	"jackMort/ChatGPT.nvim",
-	"supermaven-inc/supermaven-nvim",
+	{ "yetone/avante.nvim", build = "make" },
+
+	-- Web UI
+	-- "princejoogie/tailwind-highlight.nvim",
+	"windwp/nvim-ts-autotag",
+	{ "luckasRanarison/tailwind-tools.nvim", build = ":UpdateRemotePlugins" },
 
 	-- Helpers
 	{ "windwp/nvim-autopairs", event = "InsertEnter", config = true },

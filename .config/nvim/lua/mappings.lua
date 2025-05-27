@@ -1,5 +1,6 @@
 local ks = vim.keymap.set
 
+ks("n", "<leader>K", ":lua vim.diagnostic.open_float()<CR>")
 ks("n", "<leader>'", ":vsplit<CR><C-w>l")
 ks("n", '<leader>"', ":split<CR><C-j>l")
 ks("n", "<leader>k", ":wa | :q<CR>")

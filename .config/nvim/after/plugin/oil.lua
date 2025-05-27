@@ -201,4 +201,7 @@ require("oil").setup({
 	},
 })
 
-vim.keymap.set("n", "-", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })
+vim.keymap.set("n", "-", function()
+	pcall(vim.cmd.write)
+	vim.cmd("Oil --float")
+end, { desc = "Open parent directory" })

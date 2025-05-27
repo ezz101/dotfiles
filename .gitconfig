@@ -1,3 +1,11 @@
 [user]
 	name = Ezzedin Shamardal
-	email = ezzedin.sham@gmail.com
+	email = ezzedin404@gmail.com
+[safe]
+	directory = /home/ezzedin/.local/share/nvim/lazy/avante.nvim
+[credential "https://github.com"]
+	helper = 
+	helper = !/home/linuxbrew/.linuxbrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/home/linuxbrew/.linuxbrew/bin/gh auth git-credential

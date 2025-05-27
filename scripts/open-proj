@@ -7,10 +7,15 @@ if [ -z "$project" ]; then
     exit 1
 fi
 
-session_name=$(basename "$project")
+session_name=$(basename "$project" | tr '.' '_')
 
 if tmux has-session -t "$session_name" 2>/dev/null; then
     tmux attach -t "$session_name"
 else
-    tmux new-session -s "$session_name" -c "$project" "nvim; zsh; tmux kill-session -t $session_name"
+    tmux new-session -d -s "$session_name" -c "$project" -n "nvim" "nvim && zsh"
+    tmux new-window -t "$session_name" -n "zsh" "cd $project && zsh"
+    tmux new-window -t "$session_name" -n "zsh" "cd $project && zsh"
+    tmux select-window -t "$session_name:1"
+    tmux attach -t "$session_name"
 fi
+
