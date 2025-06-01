@@ -5,7 +5,6 @@ export TZ="Africa/Cairo"
 export XDG_CONFIG_HOME="$HOME/.config"
 export THEME="base16-gruvbox-material-dark-hard"
 # export THEME="base16-rose-pine"
-export OPENAI_API_KEY=AIzaSyDiN_IfGbFwFeIvL3D5ud8qQFdiPtKEk4s # GEMENI
 
 export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:/sbin/"
