@@ -21,6 +21,8 @@ bindsym $mod+s exec $BROWSER --search "$(xclip -o -selection primary)"
 bindsym $mod+b exec $BROWSER
 bindsym $mod+y exec bash mpv $(xclip -o -selection clipboard)
 bindsym $mod+Shift+y exec alacritty -e play-from-yt
+bindsym $mod+Shift+t exec quote
+
 
 # Navigation
 ## General

@@ -33,3 +33,10 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 		end
 	end,
 })
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = "*.cls",
+	callback = function()
+		vim.bo.filetype = "tex"
+	end,
+})

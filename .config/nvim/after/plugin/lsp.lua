@@ -1,4 +1,5 @@
-local servers = { "lua_ls", "pyright", "rust_analyzer", "clangd", "ts_ls", "tailwindcss", "vue_ls", "gopls", "svelte" }
+local servers =
+	{ "lua_ls", "pyright", "rust_analyzer", "clangd", "ts_ls", "tailwindcss", "vue_ls", "gopls", "svelte", "texlab" }
 
 require("crates").setup()
 require("tailwind-tools").setup()

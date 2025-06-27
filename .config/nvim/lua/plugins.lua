@@ -64,7 +64,7 @@ return {
 
 	-- AI
 	"github/copilot.vim",
-	{ "yetone/avante.nvim", build = "make" },
+	-- { "yetone/avante.nvim", build = "make" },
 
 	-- Web UI
 	-- "princejoogie/tailwind-highlight.nvim",
