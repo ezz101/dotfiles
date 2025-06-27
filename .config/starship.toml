@@ -4,9 +4,11 @@ format = " $username$hostname$directory$git_branch$git_state$git_status$python$c
 style = "blue"
 
 [character]
-success_symbol = "[❯](purple)"
-error_symbol = "[❯](red)"
-vimcmd_symbol = "[❮](green)"
+# success_symbol = "[❯](purple)"
+# error_symbol = "[❯](red)"
+success_symbol = "[❯](blue)[❯](yellow)[❯](red)"
+error_symbol = "[❮](blue)[❮](yellow)[❮](red)"
+# vimcmd_symbol = "[❮](green)"
 
 [git_branch]
 format = "[$branch]($style)"
