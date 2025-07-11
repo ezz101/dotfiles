@@ -17,6 +17,8 @@ export PATH="$PATH:$HOME/.go/bin"
 export PATH="$PATH:$HOME/.protoc/bin"
 export PATH="$PATH:$HOME/.node/bin"
 export PATH="$PATH:$HOME/.local/share/nvim/mason/bin/"
+export PATH="$PATH:/var/lib/pycharm-2025.1.3/bin"
+
 
 alias ls='eza --icons --color=always'
 alias ll='eza -lh --icons --git'
